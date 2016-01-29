@@ -1,3 +1,5 @@
+require 'decoplan/dive_profile'
+
 module Decoplan
   class DSL < BasicObject
     def self.dive(name, &block)

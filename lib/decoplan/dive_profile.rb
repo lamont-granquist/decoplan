@@ -1,5 +1,5 @@
-module Deco
-  class Dive_Profile < BasicObject
+module Decoplan
+  class DiveProfile < BasicObject
     attr_accessor :levels
 
     def initialize

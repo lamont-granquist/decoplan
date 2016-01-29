@@ -1,4 +1,6 @@
 require 'pry'
+require 'decoplan/dsl'
+require 'decoplan/buhlmann'  # hack for now
 
 module Decoplan
   class Runner
