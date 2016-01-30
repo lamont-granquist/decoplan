@@ -7,9 +7,22 @@ begin
 rescue LoadError
 end
 
-namespace :travis do
-  desc 'Run test on Travis'
-  task ci: %w{spec}
+begin
+  namespace :bundle do
+    desc 'Updates the ruby-advisory-db then runs bundle-audit'
+    task :audit do
+      require 'bundler/audit/cli'
+      %w(update check).each do |command|
+        Bundler::Audit::CLI.start [command]
+      end
+    end
+  end
+rescue LoadError
 end
 
-task default: %w{spec}
+namespace :travis do
+  desc 'Run test on Travis'
+  task ci: %w{spec bundle:audit}
+end
+
+task default: %w{spec bundle:audit}
