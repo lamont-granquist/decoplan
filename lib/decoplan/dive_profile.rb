@@ -1,3 +1,6 @@
+
+require 'decoplan/algorithm'
+
 module Decoplan
   class DiveProfile < BasicObject
     attr_accessor :levels
@@ -14,7 +17,7 @@ module Decoplan
     end
 
     def apply(algorithm, *params)
-      algorithm.new(self, *params)
+      Algorithm.resolve(algorithm).new(self, *params)
     end
   end
 end

@@ -33,4 +33,20 @@ RSpec.describe Decoplan::DiveProfile do
     profile.level(depth: 110, time: 10)
     expect(profile.levels).to eql([{ depth: 100, time: 20 }, { depth: 120, time: 30 }, { depth: 110, time: 10 }])
   end
+
+  it "we can apply an algorithm" do
+    klass = double("Decoplan::Algorithm::Buhlmann class")
+    instance = double("Decoplan::Algorithm::Buhlmann instance")
+    expect(Decoplan::Algorithm).to receive(:resolve).with(:buhlmann).and_return(klass)
+    expect(klass).to receive(:new).with(profile).and_return(instance)
+    expect(profile.apply(:buhlmann)).to eql(instance)
+  end
+
+  it "we can pass args to an algorithm" do
+    klass = double("Decoplan::Algorithm::Buhlmann class")
+    instance = double("Decoplan::Algorithm::Buhlmann instance")
+    expect(Decoplan::Algorithm).to receive(:resolve).with(:buhlmann).and_return(klass)
+    expect(klass).to receive(:new).with(profile, 20, 85).and_return(instance)
+    expect(profile.apply(:buhlmann, 20, 85)).to eql(instance)
+  end
 end

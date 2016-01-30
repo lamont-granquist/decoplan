@@ -5,6 +5,7 @@ Signal.trap("INT") { exit 1 }
 $LOAD_PATH.push File.expand_path("../../lib", __FILE__)
 $stdout.sync = true
 
+require "decoplan"
 require "decoplan/runner"
 
 Encoding.default_external = Encoding::UTF_8
