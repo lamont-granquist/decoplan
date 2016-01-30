@@ -4,7 +4,7 @@ before_install:
   - gem install bundler
   - gem --version
   - bundle --version
-script:  rake travis
+script:  rake travis:ci
 language: ruby
 rvm:
   - 2.1
