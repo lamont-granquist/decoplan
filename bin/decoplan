@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-Signal.trap('INT') { exit 1 }
+Signal.trap("INT") { exit 1 }
 
-$:.push File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.push File.expand_path("../../lib", __FILE__)
 $stdout.sync = true
 
-require 'decoplan/runner'
+require "decoplan/runner"
 
 Encoding.default_external = Encoding::UTF_8
 Decoplan::Runner.new.run

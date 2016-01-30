@@ -1,1 +1,1 @@
-require 'decoplan/algorithm/buhlmann'
+require "decoplan/algorithm/buhlmann"

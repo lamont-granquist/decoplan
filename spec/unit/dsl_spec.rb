@@ -1,6 +1,6 @@
 
-require 'decoplan/dsl'
-require 'decoplan/dive_profile'
+require "decoplan/dsl"
+require "decoplan/dive_profile"
 
 RSpec.describe Decoplan::DSL do
   let(:dsl) { Class.new.extend(Decoplan::DSL) }

@@ -1,6 +1,6 @@
 module Decoplan
   class Algorithm
-    def initialize(profile, *args)
+    def initialize(profile, *_args)
       @profile = profile
     end
   end

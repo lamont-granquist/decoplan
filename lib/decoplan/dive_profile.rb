@@ -9,10 +9,8 @@ module Decoplan
     end
 
     def level(depth:, time:)
-      levels.push({
-        depth: depth,
-        time: time,
-      })
+      levels.push(        depth: depth,
+                          time: time)
     end
 
     def apply(algorithm, *params)

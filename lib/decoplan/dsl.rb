@@ -1,4 +1,4 @@
-require 'decoplan/dive_profile'
+require "decoplan/dive_profile"
 
 module Decoplan
   module DSL
