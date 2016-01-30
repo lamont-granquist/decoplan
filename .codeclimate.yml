@@ -6,3 +6,12 @@ engines:
       - ruby
   rubocop:
     enabled: false
+ratings:
+  paths:
+  - app/**
+  - lib/**
+  - "**.rb"
+  - "**.go"
+exclude_paths:
+- spec/**/*
+- vendor/**/*
