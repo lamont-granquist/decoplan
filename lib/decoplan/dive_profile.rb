@@ -1,8 +1,10 @@
 module Decoplan
   class DiveProfile < BasicObject
     attr_accessor :levels
+    attr_accessor :name
 
-    def initialize
+    def initialize(name: nil)
+      @name = name
       @levels = []
     end
 
