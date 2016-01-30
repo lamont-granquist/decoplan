@@ -17,7 +17,7 @@ RSpec.describe Decoplan::DSL do
     dsl.class_eval do
       dive "test" do
         level depth: 100, time: 70
-      end.apply(:buhlmann, 20, 85)
+      end.apply(:buhlmann, hi: 20, lo: 85)
     end
   end
 

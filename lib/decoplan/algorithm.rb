@@ -2,7 +2,7 @@ module Decoplan
   class Algorithm
     @@algorithms = {}  # rubocop:disable Style/ClassVars
 
-    def initialize(profile, *_args)
+    def initialize(profile, **args)
       @profile = profile
     end
 
