@@ -7,4 +7,5 @@ group(:development) do
   gem "bundler-audit"
   gem "codeclimate-test-reporter"
   gem "finstyle"
+  gem "guard-rspec"
 end
