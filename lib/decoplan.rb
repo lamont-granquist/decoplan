@@ -1,3 +1,3 @@
-require 'decoplan/algorithms'
-require 'decoplan/version'
-require 'decoplan/dsl'
+require "decoplan/algorithms"
+require "decoplan/version"
+require "decoplan/dsl"

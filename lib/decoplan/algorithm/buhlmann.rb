@@ -1,4 +1,4 @@
-require 'decoplan/algorithm'
+require "decoplan/algorithm"
 
 module Decoplan
   class Algorithm

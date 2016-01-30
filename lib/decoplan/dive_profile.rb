@@ -1,5 +1,5 @@
 
-require 'decoplan/algorithm'
+require "decoplan/algorithm"
 
 module Decoplan
   class DiveProfile < BasicObject
