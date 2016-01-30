@@ -1,0 +1,15 @@
+sudo: false
+before_install:
+  - gem update --system
+  - gem install bundler
+  - gem --version
+  - bundle --version
+script:  rake travis
+language: ruby
+rvm:
+  - 2.1
+  - 2.2
+  - 2.3
+branches:
+  only:
+    - master
