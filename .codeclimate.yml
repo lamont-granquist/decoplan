@@ -1,17 +1,19 @@
+---
 engines:
+  bundler-audit:
+    enabled: true
   duplication:
     enabled: true
     config:
       languages:
       - ruby
+  fixme:
+    enabled: true
   rubocop:
     enabled: false
 ratings:
   paths:
-  - app/**
-  - lib/**
+  - Gemfile.lock
   - "**.rb"
-  - "**.go"
 exclude_paths:
 - spec/**/*
-- vendor/**/*
