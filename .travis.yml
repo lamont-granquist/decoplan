@@ -14,3 +14,6 @@ rvm:
 branches:
   only:
     - master
+addons:
+  code_climate:
+    repo_token: 5bd70aa7d70fc8ce3a649a0a05c0119e9441fa174964c0a270c6e952bc75996d
