@@ -13,7 +13,7 @@ module Decoplan
 
       name :buhlmann, :zhl16b
 
-      def initialize(profile, lo: 100, hi: 100)
+      def initialize(_profile, lo: 100, hi: 100)
         @lo = lo
         @hi = hi
       end
@@ -27,7 +27,7 @@ module Decoplan
       end
 
       def reset_compartments!
-        compartment = (0..15).map { 0.79 }
+        @compartments = (0..15).map { 0.79 }
       end
 
       private
@@ -38,7 +38,7 @@ module Decoplan
         end
       end
 
-      def compute_deco(deco_profile)
+      def compute_deco(_deco_profile)
       end
 
     end

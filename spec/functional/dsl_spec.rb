@@ -38,7 +38,7 @@ RSpec.describe Decoplan::DSL do
           level depth: 100, time: 70
         end
       end
-      dsl.send(alg.to_sym, d, lo:20, hi:85)
+      dsl.send(alg.to_sym, d, lo: 20, hi: 85)
     end
   end
 
