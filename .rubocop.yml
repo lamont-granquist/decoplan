@@ -34,3 +34,6 @@ Style/PercentLiteralDelimiters:
     '%w': '{}'
     '%W': '{}'
     '%x': '{}'
+Style/TrailingComma:
+  Enabled: true
+  EnforcedStyleForMultiline: comma

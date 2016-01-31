@@ -1,7 +1,12 @@
 require "decoplan/dsl"
+require "decoplan/helpers"
 
 module Decoplan
   class Algorithm
+    include Helpers
+
+    attr_accessor :profile
+
     @@algorithms = {}  # rubocop:disable Style/ClassVars
 
     def initialize(profile, **_args)
