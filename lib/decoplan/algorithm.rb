@@ -1,3 +1,5 @@
+require 'decoplan/dsl'
+
 module Decoplan
   class Algorithm
     @@algorithms = {}  # rubocop:disable Style/ClassVars
@@ -6,8 +8,11 @@ module Decoplan
       @profile = profile
     end
 
-    def self.name(symbol)
-      @@algorithms[symbol] = self
+    def self.name(*symbols)
+      symbols.each do |symbol|
+        @@algorithms[symbol] = self
+        DSL.add_algorithm_to_dsl(symbol, self)
+      end
     end
 
     def self.resolve(symbol)

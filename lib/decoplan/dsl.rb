@@ -11,5 +11,11 @@ module Decoplan
     def help
       puts "FIXME: should give the user some help"
     end
+
+    def self.add_algorithm_to_dsl(symbol, klass)
+      define_method symbol do |profile, *args|
+        klass.new(profile, *args)
+      end
+    end
   end
 end

@@ -11,7 +11,7 @@ module Decoplan
 
       N2HALF = [ 4.0, 5.0, 8.0, 12.5, 18.5, 27.0, 38.3, 54.3, 77.0, 109.0, 146.0, 187.0, 239.0, 305.0, 390.0, 498.0, 635.0 ]
 
-      name :buhlmann
+      name :buhlmann, :zhl16b
 
       def initialize(profile, lo: 100, hi: 100)
         @lo = lo
