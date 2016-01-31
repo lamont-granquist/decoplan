@@ -13,7 +13,8 @@ module Decoplan
 
       name :buhlmann, :zhl16b
 
-      def initialize(_profile, lo: 100, hi: 100)
+      def initialize(profile, lo: 100, hi: 100)
+        super
         @lo = lo
         @hi = hi
       end
