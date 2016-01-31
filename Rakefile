@@ -31,7 +31,7 @@ end
 
 namespace :travis do
   desc "Run test on Travis"
-  task ci: %w{spec rubocop}
+  task ci: %w{spec bundle:audit rubocop}
 end
 
 task default: %w{spec bundle:audit rubocop}
