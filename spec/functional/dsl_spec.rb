@@ -8,6 +8,7 @@ RSpec.describe Decoplan::DSL do
     it "can build a simple dive and apply #{alg}" do
       dsl.class_eval do
         dive "test" do
+          gas o2: 32, he: 0
           level depth: 100, time: 70
         end.apply(alg.to_sym)
       end
@@ -16,6 +17,7 @@ RSpec.describe Decoplan::DSL do
     it "can build a simple dive and apply #{alg} gradient factors" do
       dsl.class_eval do
         dive "test" do
+          gas o2: 32, he: 0
           level depth: 100, time: 70
         end.apply(alg.to_sym, lo: 20, hi: 85)
       end
@@ -25,6 +27,7 @@ RSpec.describe Decoplan::DSL do
       d = nil
       dsl.class_eval do
         d = dive "test" do
+          gas o2: 32, he: 0
           level depth: 100, time: 70
         end
       end
@@ -35,6 +38,7 @@ RSpec.describe Decoplan::DSL do
       d = nil
       dsl.class_eval do
         d = dive "test" do
+          gas o2: 32, he: 0
           level depth: 100, time: 70
         end
       end
