@@ -26,4 +26,14 @@ RSpec.describe Decoplan::Helpers do
       end
     end
   end
+
+  units = [ :atm, :bar, :mmhg, :pascal, :torr, :fsw, :msw ]
+
+  units.each do |from|
+    units.each do |to|
+      it "has a conversion for #{from} to #{to}" do
+        expect(Test.convert(1.0, from, to)).to be_kind_of Float
+      end
+    end
+  end
 end
