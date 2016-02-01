@@ -7,7 +7,7 @@ module Decoplan
 
     attr_accessor :profile
 
-    @@algorithms = {}  # rubocop:disable Style/ClassVars
+    @@algorithms = {}
 
     def initialize(profile, **_args)
       @profile = profile

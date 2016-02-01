@@ -1,5 +1,30 @@
+require "decoplan/unit_converter"
+
 module Decoplan
   module Helpers
+
+    # Defined conversions
+    BAR_TO_PASCAL = 100_000
+    ATM_TO_PASCAL = 101_325
+    ATM_TO_TORR = 760.0
+    MMHG_TO_PASCAL = 133.322_387_415
+    BAR_TO_MSW = 10.0
+    BAR_TO_FSW = 33.0
+
+    # Derived conversions
+    @@unit_converter = UnitConverter.new.create do
+      conversion :bar, :pascal, BAR_TO_PASCAL
+      conversion :atm, :pascal, ATM_TO_PASCAL
+      conversion :atm, :torr, ATM_TO_TORR
+      conversion :mmhg, :pascal, MMHG_TO_PASCAL
+      conversion :bar, :msw, BAR_TO_MSW
+      conversion :bar, :fsw, BAR_TO_FSW
+    end
+
+    def convert(value, from, to)
+      @@unit_converter.convert(value, from, to)
+    end
+
     # Ambient pressure changing linearly with time (Open Circuit).
     #
     # @param p_inert [Numeric] initial partial pressure of inert gas in compartment (bar)

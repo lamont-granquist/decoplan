@@ -22,6 +22,8 @@ Style/SpaceInsideBrackets:
   Enabled: false
 Style/SpaceInsideParens:
   Enabled: false
+Style/ClassVars:
+  Enabled: false
 Style/PercentLiteralDelimiters:
   Enabled: true
   PreferredDelimiters:
