@@ -45,7 +45,7 @@ RSpec.describe Decoplan::DiveProfile do
   it "accepts a level command" do
     profile.gas(o2: 18, he: 45)
     profile.level(depth: 100, time: 70)
-    expect(profile.levels).to eql([{:depth=>100, :time=>70, :o2=>18, :he=>45}])
+    expect(profile.levels).to eql([{ depth: 100, time: 70, o2: 18, he: 45 }])
   end
 
   it "a level command with no gas set throws an error" do
@@ -54,7 +54,7 @@ RSpec.describe Decoplan::DiveProfile do
 
   it "gases can be set directly on the level" do
     profile.level(depth: 100, time: 70, o2: 18, he: 45)
-    expect(profile.levels).to eql([{:depth=>100, :time=>70, :o2=>18, :he=>45}])
+    expect(profile.levels).to eql([{ depth: 100, time: 70, o2: 18, he: 45 }])
   end
 
   it "setting a gas on the level sets the current gas" do
@@ -62,8 +62,8 @@ RSpec.describe Decoplan::DiveProfile do
     profile.level(depth: 100, time: 20, o2: 18, he: 45)
     profile.level(depth: 120, time: 30)
     expect(profile.levels).to eql([
-      {:depth=>100, :time=>20, :o2=>18, :he=>45},
-      {:depth=>120, :time=>30, :o2=>18, :he=>45},
+      { depth: 100, time: 20, o2: 18, he: 45 },
+      { depth: 120, time: 30, o2: 18, he: 45 },
     ])
   end
 
@@ -73,9 +73,9 @@ RSpec.describe Decoplan::DiveProfile do
     profile.level(depth: 120, time: 30)
     profile.level(depth: 110, time: 10)
     expect(profile.levels).to eql([
-      {:depth=>100, :time=>20, :o2=>18, :he=>45},
-      {:depth=>120, :time=>30, :o2=>18, :he=>45},
-      {:depth=>110, :time=>10, :o2=>18, :he=>45},
+      { depth: 100, time: 20, o2: 18, he: 45 },
+      { depth: 120, time: 30, o2: 18, he: 45 },
+      { depth: 110, time: 10, o2: 18, he: 45 },
     ])
   end
 
@@ -87,9 +87,9 @@ RSpec.describe Decoplan::DiveProfile do
     profile.gas(o2: 100, he: 0)
     profile.level(depth: 20, time: 10)
     expect(profile.levels).to eql([
-      {:depth=>100, :time=>20, :o2=>30, :he=>30},
-      {:depth=>70, :time=>3, :o2=>50, :he=>0},
-      {:depth=>20, :time=>10, :o2=>100, :he=>0}
+      { depth: 100, time: 20, o2: 30, he: 30 },
+      { depth: 70, time: 3, o2: 50, he: 0 },
+      { depth: 20, time: 10, o2: 100, he: 0 },
     ])
   end
 
