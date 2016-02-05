@@ -33,7 +33,7 @@ module Decoplan
       end
 
       def reset_compartments!
-        @compartments = (0..15).map { |_i| { n2: 0.79, he: 0.0 } }
+        @compartments = (0..15).map { { n2: 0.79, he: 0.0 } }
       end
 
       private
@@ -41,16 +41,16 @@ module Decoplan
       def apply_profile(deco_profile)
         profile.levels.each do |level|
           deco_profile.level level
-          haldane_step(level[:depth], level[:time])
+          haldane_step(level)
         end
       end
 
-      def haldane_step(depth, time)
+      def haldane_step(level)
         @compartments = compartments.map.with_index do |p_inert, i|
-          # FIXME: alveolar pressure + gasses
+          # FIXME: alveolar pressure
           {
-            n2: haldane_equation(p_inert[:n2], depth * (1 - 0.32), N2_HALF[i], time),
-            he: haldane_equation(p_inert[:he], depth * 0, HE_HALF[i], time),
+            n2: haldane_equation(p_inert[:n2], level.depth * (1.0 - level.he - level.o2), N2_HALF[i], level.time),
+            he: haldane_equation(p_inert[:he], level.depth * level.he, HE_HALF[i], level.time),
           }
         end
       end
@@ -58,7 +58,6 @@ module Decoplan
       def compute_deco(deco_profile)
         deco_profile
       end
-
     end
   end
 end

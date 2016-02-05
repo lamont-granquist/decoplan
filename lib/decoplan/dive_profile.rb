@@ -9,6 +9,8 @@ module Decoplan
     attr_accessor :current_o2
     attr_accessor :current_he
 
+    Level = ::Struct.new(:depth, :time, :he, :o2)
+
     def initialize(name: nil)
       @name = name
       @levels = []
@@ -29,7 +31,7 @@ module Decoplan
       ::Kernel.raise "no he percentage set" if he.nil?
       ::Kernel.raise "no o2 percentage set" if o2.nil?
       gas(o2: o2, he: he)
-      levels.push(depth: depth, time: time, o2: o2, he: he)
+      levels.push(Level.new(depth, time, o2, he))
     end
 
     def apply(algorithm, *params)
